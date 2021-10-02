@@ -1,4 +1,4 @@
-#変数
+# 変数
 基本の中の基本
 
 本読むとLiteralがなんだとかConstantだ出るけど
@@ -7,7 +7,7 @@
 
 新卒面接ぐらいで聞く人いるかぐらい
 
-#型（Type）
+# 型（Type）
 char, byte, short, int, long, float, double
 
 内部的には全部これの組み合わせてなってる
