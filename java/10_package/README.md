@@ -143,7 +143,7 @@ import句をみて`10_package\sub\first\`を探そうとして失敗してしま
 
 java実行時も同じ。「実行の再、クラス探すときはここを探してよー」
 
-# 複数のClasspathを指定るつとき、Windowsは「；」Linuxは「：」
+# 複数のClasspathを指定するとき、Windowsは「；」Linuxは「：」
 jar(Java Archive)って、見たことある？
 
 他人が作ったJavaライブラリーとかを使うときでは、「このjarを入れて」の話がある。
