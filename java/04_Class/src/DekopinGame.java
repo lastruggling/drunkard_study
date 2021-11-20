@@ -42,20 +42,22 @@ class Player {
     private String name;
     private int HP;
     private Random dice;
+    private int power;
+    private Random attack;
     private int damage;
 
     public Player(String name) {
         this.name = name;
         this.HP = 100;
         this.dice = new Random();
-        this.damage = 10;
+        this.power = 10;
     }
 
-    public Player(String name, int HP, int damage) {
+    public Player(String name, int HP, int power) {
         this.name = name;
         this.HP = HP;
         this.dice = new Random();
-        this.damage = damage;
+        this.power = power;
     }
 
     public String getName() {
@@ -70,8 +72,10 @@ class Player {
         return this.dice.nextInt(6) + 1;
     }
 
-    private void damage(int damage) {
-        this.HP -= damage;
+    private void damage(int power) {
+        this.attack = new Random();
+        this.damage = this.attack.nextInt(power) + 1;
+        this.HP -= this.damage;
         if(this.HP < 0) {
             this.HP = 0;
         }
@@ -82,7 +86,7 @@ class Player {
     // でも、enemyのprivateが利用できる。
     // 同じClass同士ではPrivateにアクセスできること。
     public void hit(Player enemy) {
-        System.out.println(this.name + " hits " + enemy.name);
-        enemy.damage(this.damage);
+        enemy.damage(this.power);
+        System.out.println(this.name + " hits " + enemy.name + "（-" + enemy.damage + "）");
     }
 }
